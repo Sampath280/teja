@@ -8,6 +8,6 @@ app.http('httpTrigger', {
 
         const name = request.query.get('name') || await request.text() || 'world';
 
-        return { body: `Hello, ${name}!` };
+        return { body: { text: `Hello, ${name}!` } };  // Updated to return JSON object
     }
 });
