@@ -10,16 +10,16 @@
   <body>
     <main>
       <h1>Vanilla JavaScript App</h1>
-      <p>Loading content from the API: <b id="message"></b></b></p>
+      <p>Loading content from the API: <b id="message"></b></p>
     </main>
   </body>
 
   <script>
     (async function () {
       let response = await fetch(`api/httpTrigger`);
-      let message = await response.json();
+      let message = await response.text();  // Changed to parse as text
 
-      document.querySelector("#message").innerHTML = message.text
+      document.querySelector("#message").innerHTML = message;
     })();
   </script>
 </html>
