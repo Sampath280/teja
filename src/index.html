@@ -17,9 +17,10 @@
   <script>
     (async function () {
       let response = await fetch(`api/httpTrigger`);
-      let message = await response.text();  // Changed to parse as text
+      let message = await response.json();  // Changed to parse as JSON
 
-      document.querySelector("#message").innerHTML = message;
+      document.querySelector("#message").innerHTML = message.text;  // Accessing the 'text' property
     })();
   </script>
 </html>
+
